@@ -46,7 +46,7 @@ function Card() {
   const handleContactClick = (index: number) => {
     dispatch(
       setLawyerDetails({
-        lawerName: lawyers[index].name,
+        lawyerName: lawyers[index].name,
         jobTitle: lawyers[index].title,
         imageUrl: lawyers[index].imageUrl,
       })

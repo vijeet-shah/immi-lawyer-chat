@@ -33,11 +33,11 @@ const Navbar: React.FC = () => {
               />
               <span
                 className={cn(
-                  "my-0 ml-2 flex font-semibold text-[1.35rem]/[1.2] flex-col justify-center",
+                  "my-0 ml-2 flex font-mono font-bold text-[1.35rem]/[1.2] flex-col justify-center",
                   darkMode ? "text-white" : "text-dark"
                 )}
               >
-                Meet Our Attorney
+                Meet Our Attorney.
               </span>
             </div>
             <div className="flex items-center lg:shrink-0 lg:flex-nowrap">

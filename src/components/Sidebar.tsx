@@ -2,20 +2,27 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import React from "react";
 import { Provider } from "react-redux";
 import { Switch } from "./ui/switch";
-import { turnDarkMode } from "@/slices/controllerSlice";
+import { removeMessage, turnDarkMode } from "@/slices/controllerSlice";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const Sidebar: React.FC = () => {
   const value = useAppSelector((state) => state.controller);
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const darkMode = value[0].darkMode;
-  const lawyerName = value[0].lawerName;
+  const lawyerName = value[0].lawyerName;
   const jobTitle = value[0].jobTitle;
   const imageUrl = value[0].imageUrl;
 
   const handleDarkModeToggle = () => {
     dispatch(turnDarkMode({ index: 0, darkMode: !darkMode }));
+  };
+
+  const handleBack = () => {
+    dispatch(removeMessage());
+    router.push("/");
   };
 
   return (
@@ -48,7 +55,7 @@ const Sidebar: React.FC = () => {
             darkMode ? "text-white" : "text-dark"
           )}
         >
-          Attorney Chat
+          <button onClick={() => handleBack()}>Attorney Chat</button>
         </div>
       </div>
       <div className="flex flex-col items-center bg-indigo-100 border border-gray-200 mt-4 w-full py-6 px-4 rounded-lg">
@@ -78,7 +85,12 @@ const Sidebar: React.FC = () => {
           />
         </div>
         <div className="flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
-          <button className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2">
+          <button
+            className={cn(
+              "flex flex-row items-center  rounded-xl p-2",
+              darkMode ? "hover:bg-black" : "hover:bg-gray-100"
+            )}
+          >
             <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full">
               <img
                 src={imageUrl}
