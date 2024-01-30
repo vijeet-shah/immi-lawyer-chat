@@ -69,7 +69,7 @@ const Sidebar: React.FC = () => {
           <span
             className={cn("font-bold", darkMode ? "text-white" : "text-dark")}
           >
-            Active Conversations
+            {darkMode ? "Dark" : "Light"} Mode
           </span>
           <Switch
             checked={darkMode}
