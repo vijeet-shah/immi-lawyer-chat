@@ -31,9 +31,11 @@ const ChatMessagesGrid: React.FC = () => {
           </div>
           <div className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
             <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ipsa
-              commodi illum saepe numquam maxime asperiores voluptate sit,
-              minima perspiciatis.
+              Thank you for visiting https://immibot.ai/! We appreciate your
+              interest. Our team will be in touch with you shortly. Feel free to
+              explore our site for more information in the meantime. We look
+              forward to connecting with you and assisting with any
+              immigration-related inquiries.
             </div>
           </div>
         </div>
