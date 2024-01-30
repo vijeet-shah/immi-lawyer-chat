@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
                   darkMode ? "text-white" : "text-dark"
                 )}
               >
-                Meet Our Attorney.
+                <button>Meet Our Attorney.</button>
               </span>
             </div>
             <div className="flex items-center lg:shrink-0 lg:flex-nowrap">
